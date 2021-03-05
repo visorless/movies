@@ -6,6 +6,10 @@
     --dark-shade: #3c475f;
 }
 
+.root {
+    overflow-x: hidden;
+}
+
 body {
     background-color: var(--light-shade)
 }
@@ -16,5 +20,37 @@ body {
     justify-content: center;
     align-items: center;
     width: 100vw;
+    margin-bottom: 5em;
     /* height: 100vh; */
+}
+
+.movieCardArea{
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movieCard{
+    display: flex;
+    flex-flow: column;
+    background-color: black;
+    color: var(--light-shade);
+    margin: 0.5em;
+    padding: 0.5em;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5em;
+    box-shadow: 0 8px 6px -6px black;
+    flex: 1;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--dark-shade);
+    color: var(--light-shade);
+    text-align: center;
+    padding: 0.5em 0;
+    left: 0;
 }

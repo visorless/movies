@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import './App.css';
+
+import MovieCard from './components/MovieCard'
 import {apikey} from './util/secret'
 
 const URL = 'https://api.themoviedb.org/3/search/movie'
@@ -31,16 +33,15 @@ function App() {
             {searchValue.length > 0 ?
                 `Searching for ${searchValue}...` : ''}
         </div>
-        <div>
+        <div className="movieCardArea">
             {data.map( movie => (
-                <div key={movie.id}>
-                    <div>{movie.original_title}</div>
-                    <progress value={movie.vote_average/10} />
-                    <img src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`} />
-                </div>
+                <MovieCard movieData={movie} key={movie.id} />
             ))}
         </div>
-        * api courtesy of the movie db: https://www.themoviedb.org
+        <div className="footer">
+            * api courtesy of the movie db: https://www.themoviedb.org
+        </div>
+
     </div>
   );
 }
