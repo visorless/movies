@@ -24,6 +24,14 @@ function App() {
         }
     }, [searchValue])
 
+    useEffect( () => {
+        console.log(isChecked)
+        if(searchValue.length > 0){
+            setIsSearching(true)
+            doSearch(1)
+        }
+    }, [isChecked])
+
     const doSearch = (page) => {
         axios.get(`${URL}${APIKEY}&language=en-US&query=${searchValue}&page=${page}&include_adult=${isChecked}`)
         .then(response => {
@@ -45,7 +53,7 @@ function App() {
         doSearch(index)
     }
     const handleCheck = () => {
-        setIsChecked(true)
+        setIsChecked(!isChecked)
     }
   return (
     <div className="App">
