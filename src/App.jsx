@@ -21,6 +21,9 @@ function App() {
         if(searchValue.length > 0){
             setIsSearching(true)
             doSearch(1)
+        } else{
+            setData([])
+            setPageData({})
         }
     }, [searchValue])
 
