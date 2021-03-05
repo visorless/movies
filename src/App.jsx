@@ -15,6 +15,7 @@ function App() {
     const [data, setData] = useState([])
     const [isSearching, setIsSearching] = useState(false)
     const [pageData, setPageData] = useState({})
+    const [isChecked, setIsChecked] = useState(false)
 
     useEffect( () => {
         if(searchValue.length > 0){
@@ -24,7 +25,7 @@ function App() {
     }, [searchValue])
 
     const doSearch = (page) => {
-        axios.get(`${URL}${APIKEY}&language=en-US&query=${searchValue}&page=${page}&include_adult=false`)
+        axios.get(`${URL}${APIKEY}&language=en-US&query=${searchValue}&page=${page}&include_adult=${isChecked}`)
         .then(response => {
             setData(response.data.results)
             setIsSearching(false)
@@ -43,9 +44,15 @@ function App() {
     const handlePage = (index) => {
         doSearch(index)
     }
+    const handleCheck = () => {
+        setIsChecked(true)
+    }
   return (
     <div className="App">
         <h1 style={{color:'var(--dark-shade)'}}>Movie Searcher</h1>
+        <div>
+            <input type="checkbox" value={isChecked} onChange={handleCheck} /> Adult?
+        </div>
         <input onChange={handleChange} value={searchValue} size="100" />
         <div>
             {isSearching ?

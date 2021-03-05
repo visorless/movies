@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 
 const MovieCard = ({movieData, ...props}) => {
-    const [loaded, isLoaded] = useState(false)
+    const [isLoaded, setIsLoaded] = useState(false)
     const [src, setSrc] = useState('')
     const [fallBackSrc, setFallBackSrc] = useState('')
 
@@ -13,10 +13,14 @@ const MovieCard = ({movieData, ...props}) => {
         <div className="movieCard">
             <img
                 width="185"
-                onLoad={ () => isLoaded(true)}
+                onLoad={ () => setIsLoaded(true)}
                 onError={() => setSrc(fallBackSrc)}
                 style={isLoaded ? {} : {display:'none'}}
                 src={src} />
+            <img
+                width="185"
+                style={isLoaded ? {display:'none'} : {}}
+                src="/185x278.png" />
             <span style={{padding: '0.5em'}}>Released: {movieData.release_date}</span>
             <progress value={movieData.vote_average/10} />
         </div>
