@@ -11,7 +11,8 @@
 }
 
 body {
-    background-color: var(--light-shade)
+    background-color: var(--light-shade);
+    overflow-x: hidden;
 }
 
 .App{
@@ -44,6 +45,31 @@ body {
     /* flex: 1; */
 }
 
+.movieCard:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+
+.moviePopupBackdrop{
+    display:flex;
+    position: absolute;
+    top:0;
+    left:0;
+    justify-content: center;
+    height:100vh;
+    width:100vw;
+    align-items: center;
+    overflow-x: hidden;
+}
+.moviePopup{
+    width:500px;
+    padding:1em;
+    background-color: var(--dark-shade);
+    border-radius: 0.2em;
+    box-shadow: 5px 5px 10px 1px black;
+    color:var(--light-shade);
+}
+
 .footer {
     position: fixed;
     bottom: 0;
@@ -53,6 +79,12 @@ body {
     text-align: center;
     padding: 0.5em 0;
     left: 0;
+}
+
+.moviePopupClose{
+    display:flex;
+    justify-content: flex-end;
+    padding-bottom: 0.5em;
 }
 
 .pageButton {

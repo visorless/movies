@@ -5,6 +5,7 @@ import './App.css';
 import MovieCard from './components/MovieCard'
 import Paginator from './components/Paginator'
 
+
 import {apikey} from './util/secret'
 
 const URL = 'https://api.themoviedb.org/3/search/movie'
@@ -58,8 +59,10 @@ function App() {
     const handleCheck = () => {
         setIsChecked(!isChecked)
     }
+
   return (
     <div className="App">
+
         <h1 style={{color:'var(--dark-shade)'}}>Movie Searcher</h1>
         <div>
             <input type="checkbox" value={isChecked} onChange={handleCheck} /> Adult?
