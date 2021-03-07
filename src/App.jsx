@@ -8,7 +8,7 @@ import Paginator from './components/Paginator'
 
 import {apikey} from './util/secret'
 
-const URL = 'https://api.themoviedb.org/3/search/movie'
+const URL = 'https://api.themoviedb.org/3/search/'
 const APIKEY = `?api_key=${apikey}`
 function App() {
 
@@ -16,7 +16,8 @@ function App() {
     const [data, setData] = useState([])
     const [isSearching, setIsSearching] = useState(false)
     const [pageData, setPageData] = useState({})
-    const [isChecked, setIsChecked] = useState(false)
+    const [isAdult, setIsAdult] = useState(false)
+    const [isMovie, setIsMovie] = useState(true)
 
     useEffect( () => {
         if(searchValue.length > 0){
@@ -29,15 +30,14 @@ function App() {
     }, [searchValue])
 
     useEffect( () => {
-        console.log(isChecked)
         if(searchValue.length > 0){
             setIsSearching(true)
             doSearch(1)
         }
-    }, [isChecked])
+    }, [isAdult, isMovie])
 
     const doSearch = (page) => {
-        axios.get(`${URL}${APIKEY}&language=en-US&query=${searchValue}&page=${page}&include_adult=${isChecked}`)
+        axios.get(`${URL}${isMovie ? 'movie' : 'tv'}${APIKEY}&language=en-US&query=${searchValue}&page=${page}&include_adult=${isAdult}`)
         .then(response => {
             setData(response.data.results)
             setIsSearching(false)
@@ -56,8 +56,13 @@ function App() {
     const handlePage = (index) => {
         doSearch(index)
     }
-    const handleCheck = () => {
-        setIsChecked(!isChecked)
+    const handleCheck = (e) => {
+        if(e.target.name === 'adult'){
+            setIsAdult(!isAdult)
+        } else if (e.target.name === 'movies'){
+            setIsMovie(!isMovie)
+        }
+
     }
 
   return (
@@ -65,7 +70,8 @@ function App() {
 
         <h1 style={{color:'var(--dark-shade)'}}>Movie Searcher</h1>
         <div>
-            <input type="checkbox" value={isChecked} onChange={handleCheck} /> Adult?
+            <input type="checkbox" value={setIsAdult} onChange={handleCheck} name="adult"/> Adult?
+            <button onClick={handleCheck} name="movies"> {isMovie ? 'TV Shows' : 'Movies'}? </button>
         </div>
         <input onChange={handleChange} value={searchValue} size="100" />
         <div>
@@ -75,7 +81,7 @@ function App() {
         <Paginator pageData={pageData} handlePage={handlePage}/>
         <div className="movieCardArea">
             {data.map( movie => (
-                <MovieCard movieData={movie} key={movie.id} />
+                <MovieCard movieData={movie} key={movie.id} isMovie={isMovie}/>
             ))}
         </div>
         <Paginator pageData={pageData} handlePage={handlePage}/>
