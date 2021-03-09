@@ -5,7 +5,6 @@ import './App.css';
 import MovieCard from './components/MovieCard'
 import Paginator from './components/Paginator'
 
-
 import {apikey} from './util/secret'
 
 const URL = 'https://api.themoviedb.org/3/search/'
