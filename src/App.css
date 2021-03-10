@@ -44,6 +44,10 @@ body {
     box-shadow: 0 8px 6px -6px black;
     /* flex: 1; */
 }
+.movieCardAdult{
+    background-color: red;
+}
+
 
 .movieCard:hover{
     background-color: gray;
@@ -117,4 +121,14 @@ body {
     display: flex;
     width: 100%;
     justify-content: center;
+}
+.popupCredits{
+    margin-top: 1em;
+    max-height: 10em;
+    overflow-y: auto;
+}
+.popupVideos{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
 }

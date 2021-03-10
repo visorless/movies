@@ -14,8 +14,17 @@ const MovieCard = ({movieData, isMovie, ...props}) => {
         setFallBackSrc(`https://via.placeholder.com/185x278.png?text=${isMovie ? movieData.title : movieData.name}`)
     }, [movieData])
 
+    const handleClosePop = (e) => {
+        console.log(e)
+        if (!isShowing) {
+            toggle()
+        } else if (e && e.target.name === 'close') {
+            toggle()
+        }
+    }
+
     return(
-        <div className="movieCard" onClick={toggle}>
+        <div className={!movieData.adult ? "movieCard" : "movieCard movieCardAdult"} onClick={handleClosePop}>
             <img
                 width="185"
                 alt={isMovie ? movieData.title : movieData.name}
@@ -30,7 +39,7 @@ const MovieCard = ({movieData, isMovie, ...props}) => {
                 src="/185x278.png" />
             <span style={{padding: '0.5em'}}>Released: {movieData.release_date}</span>
             <progress value={movieData.vote_average/10} />
-            <MoviePopup data={movieData} isShowing={isShowing} hide={toggle} isMovie={isMovie}/>
+            <MoviePopup data={movieData} isShowing={isShowing} hide={handleClosePop} isMovie={isMovie}/>
         </div>
     )
 }

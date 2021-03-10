@@ -17,6 +17,5 @@ More of to come!
 
 - Finish the 'Cloning this app' section
 - add rating system
-- show videos for a movie
 - show recommended "you might also like"
 - show similar titles "Similar Titles"
