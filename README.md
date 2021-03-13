@@ -22,3 +22,7 @@ Users can search for Movies or TV shows from the [The MovieDB](themoviedb.org) v
 - save secret.js, cd ../..
 - npm start
 - search away!
+
+## Related Tutorial
+
+Why cheat your way to victory when you can follow [this tutorial](https://seanrelzy.wordpress.com/movie-search-app/) and make your own movie search app!
