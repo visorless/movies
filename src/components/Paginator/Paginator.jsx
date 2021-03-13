@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react'
 
+import './Paginator.css'
+
 
 const Paginator = ({pageData, ...props}) => {
     const [totalPages, setTotalPages] = useState([])

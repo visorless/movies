@@ -1,0 +1,31 @@
+.pageButton {
+  width: 2em;
+  cursor: pointer;
+  color: var(--light-shade);
+  background-color: var(--dark-accent);
+  padding: 0.5em;
+  margin: 0 0.5em;
+  text-align: center;
+  border-radius: 0.2em;
+}
+.pageButton:hover {
+  /* text-decoration: underline; */
+  color: var(--dark-shade);
+  background-color: var(--light-accent);
+}
+.pageButtonDead {
+  width: 2em;
+  cursor: pointer;
+  color: var(--dark-accent);
+  background-color: var(--light-shade);
+  border: 1px solid var(--dark-accent);
+  padding: 0.5em;
+  margin: 0 0.5em;
+  text-align: center;
+  border-radius: 0.2em;
+}
+.paginator {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}

@@ -2,8 +2,8 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import './App.css';
 
-import MovieCard from './components/MovieCard'
-import Paginator from './components/Paginator'
+import MovieCard from './components/MovieCard/MovieCard'
+import Paginator from './components/Paginator/Paginator'
 
 import {apikey} from './util/secret'
 

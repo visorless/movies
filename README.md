@@ -1,4 +1,5 @@
 # Movie Search
+
 ## For movie lovers
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -16,6 +17,3 @@ More of to come!
 ## Todo:
 
 - Finish the 'Cloning this app' section
-- add rating system
-- show recommended "you might also like"
-- show similar titles "Similar Titles"

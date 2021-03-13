@@ -1,134 +1,43 @@
 :root {
-    --light-shade: #f2eff2;
-    --light-accent: #81a9b8;
-    --brand-color: #b7bb46;
-    --dark-accent: #7c8498;
-    --dark-shade: #3c475f;
+  --light-shade: #f2eff2;
+  --light-accent: #81a9b8;
+  --brand-color: #b7bb46;
+  --dark-accent: #7c8498;
+  --dark-shade: #3c475f;
 }
 
 #root {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 body {
-    background-color: var(--light-shade);
-    overflow-x: hidden;
+  background-color: var(--light-shade);
+  overflow-x: hidden;
 }
 
-.App{
-    display:flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    margin-bottom: 5em;
-    /* height: 100vh; */
+.App {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  margin-bottom: 5em;
+  /* height: 100vh; */
 }
 
-.movieCardArea{
-    width: 95%;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.movieCard{
-    display: flex;
-    flex-flow: column;
-    background-color: black;
-    color: var(--light-shade);
-    margin: 0.5em;
-    padding: 0.5em;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0.5em;
-    box-shadow: 0 8px 6px -6px black;
-    /* flex: 1; */
-}
-.movieCardAdult{
-    background-color: red;
-}
-
-
-.movieCard:hover{
-    background-color: gray;
-    cursor: pointer;
-}
-
-.moviePopupBackdrop{
-    display:flex;
-    position: fixed;
-    top:0;
-    left:0;
-    justify-content: center;
-    height:100vh;
-    width:100vw;
-    align-items: center;
-    overflow-x: hidden;
-}
-.moviePopup{
-    width:500px;
-    padding:1em;
-    background-color: var(--dark-shade);
-    border-radius: 0.2em;
-    box-shadow: 5px 5px 10px 1px black;
-    color:var(--light-shade);
+.movieCardArea {
+  width: 95%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: var(--dark-shade);
-    color: var(--light-shade);
-    text-align: center;
-    padding: 0.5em 0;
-    left: 0;
-}
-
-.moviePopupClose{
-    display:flex;
-    justify-content: flex-end;
-    padding-bottom: 0.5em;
-}
-
-.pageButton {
-    width: 2em;
-    cursor:pointer;
-    color: var(--light-shade);
-    background-color: var(--dark-accent);
-    padding:0.5em;
-    margin:0 0.5em;
-    text-align: center;
-    border-radius: 0.2em;
-}
-.pageButton:hover {
-    /* text-decoration: underline; */
-    color: var(--dark-shade);
-    background-color: var(--light-accent)
-}
-.pageButtonDead {
-    width: 2em;
-    cursor:pointer;
-    color: var(--dark-accent);
-    background-color: var(--light-shade);
-    border:1px solid var(--dark-accent);
-    padding:0.5em;
-    margin:0 0.5em;
-    text-align: center;
-    border-radius: 0.2em;
-}
-.paginator {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-}
-.popupCredits{
-    margin-top: 1em;
-    max-height: 10em;
-    overflow-y: auto;
-}
-.popupVideos{
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--dark-shade);
+  color: var(--light-shade);
+  text-align: center;
+  padding: 0.5em 0;
+  left: 0;
 }
