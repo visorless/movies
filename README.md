@@ -12,7 +12,16 @@ Users can search for Movies or TV shows from the [The MovieDB](themoviedb.org) v
 
 ## Cloning this app
 
-More of to come!
+- Clone this repo to a folder of your liking
+- cd into that folder
+- npm install
+- cd into src/util
+- create a new file named 'secret.js'
+- in secret.js, enter your API key for TMDb:
+  - export const apikey = '{{your_api_key_here}}'
+- save secret.js, cd ../..
+- npm start
+- search away!
 
 ## Todo:
 
