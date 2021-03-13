@@ -22,7 +22,3 @@ Users can search for Movies or TV shows from the [The MovieDB](themoviedb.org) v
 - save secret.js, cd ../..
 - npm start
 - search away!
-
-## Todo:
-
-- Finish the 'Cloning this app' section
