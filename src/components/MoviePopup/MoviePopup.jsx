@@ -46,7 +46,7 @@ const MPopup = ({hide, data, isMovie}) => {
         .then( response => {
             setRecommend(response.data.results)
         })
-    }, [])
+    }, [isMovie])
 
     return (
         <div className="popupBackdrop">
