@@ -39,8 +39,8 @@ const MovieCard = ({movieData, isMovie, ...props}) => {
                 alt="placeholder"
                 style={isLoaded ? {display:'none'} : {}}
                 src="/185x278.png" />
-            <span style={{padding: '0.5em'}}>{isMovie ? `Released: ${movieData.release_date}` : `Air Date: ${movieData.first_air_date}`}</span>
-            <progress value={movieData.vote_average/10} />
+            {/*<span style={{padding: '0.5em'}}>{isMovie ? `Released: ${movieData.release_date}` : `Air Date: ${movieData.first_air_date}`}</span>
+            <progress value={movieData.vote_average/10} />*/}
             <MoviePopup data={movieData} isShowing={isShowing} hide={handleClosePop} isMovie={isMovie}/>
         </div>
     )

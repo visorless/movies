@@ -1,15 +1,20 @@
 .popup {
   width: 800px;
-  height: 800px;
+  /* height: 800px; */
   padding: 0 0.5em 1em 0.5em;
   background-color: var(--dark-shade);
   border-radius: 0.2em;
   box-shadow: 5px 5px 10px 1px black;
   color: var(--light-shade);
-  overflow: hidden;
+  /* overflow: hidden; */
   display: flex;
   flex-flow: column;
   /* overflow-y: scroll; */
+}
+@media only screen and (max-width: 850px) {
+  .popup {
+    width: 95%;
+  }
 }
 
 .popupBackdrop {
@@ -18,10 +23,11 @@
   top: 0;
   left: 0;
   justify-content: center;
-  height: 100vh;
+  /* height: 100vh; */
   width: 100vw;
-  align-items: center;
-  overflow-x: hidden;
+  padding-top: 2em;
+  /* align-items: center; */
+  overflow-y: scroll;
   background: linear-gradient(
     180deg,
     rgba(100, 100, 100, 0.5) 25%,
@@ -30,7 +36,7 @@
 }
 
 .popupBody {
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   padding: 0 0.5em;
   /* height: 90%; */
 }
