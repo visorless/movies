@@ -1,0 +1,19 @@
+.featuredImage {
+  height: 600px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-right: 2em;
+  color: white;
+  text-transform: uppercase;
+  background: linear-gradient(to top, var(--light-accent), var(--dark-shade));
+  cursor: pointer;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 1080px) {
+  .featuredImage {
+    height: 300px;
+  }
+}

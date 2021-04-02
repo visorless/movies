@@ -1,0 +1,61 @@
+.moviePanelContainer {
+  display: flex;
+  flex-flow: column;
+  color: white;
+  margin-top: 2em;
+}
+
+.moviePanelContainer h2 {
+  padding-left: 1em;
+}
+
+.moviePanelScroll {
+  position: sticky;
+  font-size: 5em;
+  color: white;
+  height: 100%;
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  user-select: none;
+}
+
+.moviePanelScroll:hover {
+  color: var(--light-accent);
+}
+.moviePanelScroll:active {
+  color: var(--light-shade);
+}
+
+.moviePanelScroll span {
+  opacity: 0.5;
+}
+
+.moviePanelScrollLeft {
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0),
+    var(--dark-shade-50),
+    var(--dark-shade)
+  );
+  padding-left: 0.1em;
+  padding-right: 0.4em;
+  left: 0;
+}
+
+.moviePanelScrollRight {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    var(--dark-shade-50),
+    var(--dark-shade)
+  );
+  padding-left: 0.5em;
+  padding-right: 0.1em;
+  right: 0;
+}
+
+.MoviePanel {
+  position: relative;
+  overflow-x: hidden;
+}

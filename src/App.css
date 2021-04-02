@@ -1,9 +1,10 @@
 :root {
-  --light-shade: #f2eff2;
-  --light-accent: #81a9b8;
-  --brand-color: #b7bb46;
-  --dark-accent: #7c8498;
-  --dark-shade: #3c475f;
+  --light-accent: rgb(144, 55, 73);
+  --brand-color: rgb(232, 69, 69);
+  --dark-accent: rgb(83, 53, 74);
+  --dark-shade: rgb(43, 46, 74);
+  --dark-shade-50: rgba(43, 46, 74, 0.5);
+  --dark-shade-10: rgba(43, 46, 74, 0.1);
 }
 
 #root {
@@ -11,19 +12,18 @@
 }
 
 body {
-  background-color: var(--light-shade);
+  background-color: var(--dark-shade);
   overflow-x: hidden;
 }
 
-.App {
+/* .App {
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
   width: 100vw;
   margin-bottom: 5em;
-  /* height: 100vh; */
-}
+} */
 
 .movieCardArea {
   width: 95%;

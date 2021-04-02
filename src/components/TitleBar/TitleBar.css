@@ -1,0 +1,25 @@
+.titleBar {
+  display: flex;
+  height: 2em;
+  background-color: var(--dark-shade);
+  justify-content: space-between;
+  padding: 0 1em;
+  color: white;
+  overflow-y: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+.titleBarThing {
+  display: flex;
+  align-items: center;
+}
+
+.titleBarThing input {
+  margin: 0 0.5em;
+}
+
+.titleBarTitle {
+  font-size: 1.7em;
+  color: var(--brand-color);
+}
