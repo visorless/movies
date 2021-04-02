@@ -17,7 +17,8 @@ const fetchFeatured = async () => {
 const fetchFeaturedImage = async (movieID) => {
     let image = await axios.get(`https://api.themoviedb.org/3/movie/${movieID}/images${APIKEY}&language=en-US&include_image_language=en`)
     if (image.data.backdrops.length > 0){
-        return image.data.backdrops[0].file_path
+        let random = Math.floor(Math.random()*image.data.backdrops.length)
+        return image.data.backdrops[random].file_path
     } else {
         return null
     }
@@ -30,10 +31,14 @@ const FeaturedImage = () => {
     // const [prog, setProg] = useState(1)
 
     useEffect( () => {
+        // load an image
+        handleLoadFeaturedImage()
         const interval = setInterval(() => {
+            // and load a different image every 5 seconds
             handleLoadFeaturedImage()
         }, 5000);
      
+        // on unmount, clear timer
         return () => {
             clearInterval(interval);
             // clearInterval(progInterval)
@@ -50,7 +55,7 @@ const FeaturedImage = () => {
                 .then(result => {
                     if (result) {
                         setMovieTitle(title)
-                        // setSrc(`https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces_filter(tritone,2b2e4a,e84545,e84545)${result}`)
+                        //setSrc(`https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,2b2e4a,e84545)${result}`)
                         setSrc(`https://www.themoviedb.org/t/p/original${result}`)
                     }                    
                 })
